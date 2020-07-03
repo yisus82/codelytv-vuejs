@@ -1,0 +1,22 @@
+{
+  "name": "codelytv-vuejs",
+  "version": "1.0.0",
+  "description": "Blog using VueJs",
+  "main": "index.js",
+  "repository": "https://github.com/yisus82/codelytv-vuejs",
+  "author": "Jesús Ángel Pérez-Roca Fernández",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "prettier-eslint": "^11.0.0",
+    "prettier-eslint-cli": "^5.0.0",
+    "prettier-stylelint": "^0.4.2",
+    "stylelint": "^13.6.1",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-order": "^4.1.0"
+  }
+}
