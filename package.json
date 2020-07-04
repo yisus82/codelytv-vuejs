@@ -9,7 +9,7 @@
   "private": false,
   "scripts": {
     "build": "browserify src/*.js -o public/js/bundle.js",
-    "start": "light-server -s public -o",
+    "start": "light-server -s public",
     "serve": "yarn build && yarn start"
   },
   "dependencies": {
