@@ -3,7 +3,7 @@ require('./comment-list-item');
 
 const templateCommentsList = `
 <div class="comments mt-4">
-  <h3 class="mb-4">Comments</h3>
+  <h3 class="mb-4">Comments ({{ comments.length }})</h3>
   <comment-list-item 
     v-for="comment in comments" 
     :key="comment.id"
