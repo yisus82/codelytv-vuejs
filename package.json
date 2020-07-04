@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "browserify js/*.js -o public/js/bundle.js",
+    "build": "browserify src/*.js -o public/js/bundle.js",
     "start": "light-server -s public -o",
     "serve": "yarn build && yarn start"
   },
