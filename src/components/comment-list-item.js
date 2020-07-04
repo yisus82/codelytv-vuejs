@@ -3,13 +3,12 @@ const Vue = require('vue/dist/vue');
 const templateCommentsItem = `
 <div class="comment mb-2 row">
   <div class="comment-avatar col-md-1 col-sm-2 text-center pr-1">
-    <a href=""><img class="mx-auto rounded-circle img-fluid" :src="avatar"
-        alt="User avatar"></a>
+    <a href=""><img class="mx-auto rounded-circle img-fluid" :src="avatar" alt="User avatar"></a>
   </div>
   <div class="comment-content col-md-11 col-sm-10">
     <h6 class="small comment-meta"><a href="#">{{ username }}</a> {{ date }}</h6>
     <div class="comment-body">
-      <p>{{ comment }}</p>
+      <p style="white-space: pre-line;">{{ comment }}</p>
     </div>
   </div>
 </div>
