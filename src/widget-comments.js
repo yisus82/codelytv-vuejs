@@ -5,26 +5,28 @@ const HELPERS = require('./helpers');
 require('./components/comment-form');
 require('./components/comment-list');
 
+const getRandomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
 const comments = [
   {
     id: HELPERS.guid(),
     username: faker.name.findName(),
-    date: moment('2020-07-01').valueOf(),
-    comment: faker.lorem.lines(3),
+    date: moment().subtract(getRandomInteger(1, 3), 'years').valueOf(),
+    comment: faker.lorem.lines(getRandomInteger(1, 3)),
   },
   {
     id: HELPERS.guid(),
     avatar: faker.image.avatar(),
     username: faker.name.findName(),
-    date: moment('2020-07-03').valueOf(),
-    comment: faker.lorem.paragraphs(2),
+    date: moment().subtract(getRandomInteger(1, 6), 'days').valueOf(),
+    comment: faker.lorem.paragraphs(getRandomInteger(1, 3)),
   },
   {
     id: HELPERS.guid(),
     avatar: faker.image.avatar(),
     username: faker.name.findName(),
-    date: moment('2020-07-05').valueOf(),
-    comment: faker.lorem.sentences(1),
+    date: moment().subtract(getRandomInteger(1, 35), 'minutes').valueOf(),
+    comment: faker.lorem.sentences(getRandomInteger(1, 3)),
   },
 ];
 
