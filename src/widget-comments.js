@@ -1,5 +1,6 @@
 const Vue = require('vue/dist/vue');
 const moment = require('moment');
+const faker = require('faker');
 const HELPERS = require('./helpers');
 require('./components/comment-form');
 require('./components/comment-list');
@@ -7,23 +8,23 @@ require('./components/comment-list');
 const comments = [
   {
     id: HELPERS.guid(),
-    username: 'yisus82',
+    username: faker.name.findName(),
     date: moment('2020-07-01').valueOf(),
-    comment: 'Comentario de prueba',
+    comment: faker.lorem.lines(3),
   },
   {
     id: HELPERS.guid(),
-    avatar: 'http://demos.themes.guide/bodeo/assets/images/users/m103.jpg',
-    username: 'admin',
+    avatar: faker.image.avatar(),
+    username: faker.name.findName(),
     date: moment('2020-07-03').valueOf(),
-    comment: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.',
+    comment: faker.lorem.paragraphs(2),
   },
   {
     id: HELPERS.guid(),
-    avatar: 'http://demos.themes.guide/bodeo/assets/images/users/w102.jpg',
-    username: 'maslarino',
+    avatar: faker.image.avatar(),
+    username: faker.name.findName(),
     date: moment('2020-07-05').valueOf(),
-    comment: 'Sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.',
+    comment: faker.lorem.sentences(1),
   },
 ];
 
