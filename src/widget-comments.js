@@ -33,7 +33,7 @@ const comments = [
 module.exports = new Vue({
   el: '#comments_block',
   data: {
-    comments: comments.reverse(),
+    comments,
   },
   methods: {
     addComment({ username, comment }) {
@@ -43,7 +43,7 @@ module.exports = new Vue({
         comment,
         date: moment().valueOf(),
       };
-      this.comments = [newComment, ...this.comments];
+      this.comments = [...this.comments, newComment];
     },
   },
 });
