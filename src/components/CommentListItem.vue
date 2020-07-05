@@ -2,7 +2,7 @@
   <div class="comment mb-2 row">
     <div class="comment-avatar col-md-1 col-sm-2 text-center pr-1">
       <a href>
-        <img class="mx-auto rounded-circle img-fluid" :src="avatar" alt="avatar" />
+        <img class="mx-auto rounded-circle img-fluid" :src="avatar" alt="User avatar" />
       </a>
     </div>
     <div class="comment-content col-md-11 col-sm-10">
@@ -19,6 +19,7 @@
 
 <script>
 import moment from 'moment';
+import defaultAvatar from '../assets/images/avatar.png';
 
 export default {
   name: 'CommentListItem',
@@ -37,7 +38,7 @@ export default {
     },
     avatar: {
       type: String,
-      default: 'https://iupac.org/cms/wp-content/uploads/2018/05/default-avatar-300x300.png',
+      default: defaultAvatar,
     },
     date: {
       type: Number,
