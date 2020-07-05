@@ -18,7 +18,8 @@ export default new Router({
       component: Home,
     },
     {
-      path: '/post',
+      name: 'PostDetails',
+      path: '/post/:id',
       component: Post,
     },
     {
@@ -26,4 +27,7 @@ export default new Router({
       component: PageNotFound,
     },
   ],
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  },
 });

@@ -6,13 +6,17 @@
 
     <main role="main" class="container">
       <div class="row">
-        <div class="col-md-8 blog-main">
-          <BlogPost />
+        <div class="col-md-8 blog-main" v-if="article">
+          <BlogPost
+            :img="article.urlToImage"
+            :title="article.title"
+            :date="article.publishedAt"
+            :author="article.author"
+            :content="article.content"
+          />
           <CommentsForm @add-comment="addComment($event)" />
           <CommentsList :comments="comments" />
         </div>
-
-        <Aside />
       </div>
     </main>
 
@@ -25,17 +29,18 @@ import { uuid } from 'uuidv4';
 import moment from 'moment';
 import Header from '../components/Header.vue';
 import BlogPost from '../components/BlogPost.vue';
-import Aside from '../components/Aside.vue';
 import Footer from '../components/Footer.vue';
 import CommentsForm from '../components/CommentForm.vue';
 import CommentsList from '../components/CommentList.vue';
-import comments from '../data/comments';
+import { getArticle } from '../services/news-service';
+import getRandomComments from '../data/comments';
 
 export default {
   name: 'Post',
   data() {
     return {
-      comments,
+      comments: getRandomComments(),
+      articleId: this.$route.params.id,
     };
   },
   methods: {
@@ -52,10 +57,14 @@ export default {
   components: {
     Header,
     BlogPost,
-    Aside,
     Footer,
     CommentsForm,
     CommentsList,
+  },
+  asyncComputed: {
+    article() {
+      return getArticle(this.articleId);
+    },
   },
 };
 </script>
