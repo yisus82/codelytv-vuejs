@@ -13,6 +13,8 @@
             :date="article.publishedAt"
             :author="article.author"
             :content="article.content"
+            :href="article.url"
+            :source="article.source.name"
           />
           <CommentsForm @add-comment="addComment($event)" />
           <CommentsList :comments="comments" />
